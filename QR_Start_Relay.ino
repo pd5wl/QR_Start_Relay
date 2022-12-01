@@ -8,8 +8,8 @@ Throw a switch based on the status of a value in a mysql DB
 #include <ESP8266HTTPClient.h>
 
 #ifndef STASSID
-#define STASSID "NMSP"
-#define STAPSK  "L0gger24"
+#define STASSID "[SSID]"
+#define STAPSK  "[password]"
 #endif
 
 int switchstate = 0;
