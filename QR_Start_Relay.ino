@@ -60,7 +60,7 @@ void loop()
   HTTPClient http;
   Serial.println("Check code");
   Serial.println("");
-  http.begin(client, "http://37.97.179.162/check.php");
+  http.begin(client, "[server]/check.php");
   int httpCode = http.GET();
       if(httpCode > 0) {
         if(httpCode == HTTP_CODE_OK) {
@@ -88,7 +88,7 @@ void loop()
   digitalWrite(relaisPin, LOW);
   delay(2000);  
 //Reset DB    
-    http.begin(client, "http://37.97.179.162/reset.php");
+    http.begin(client, "[server]/reset.php");
         int httpCode = http.GET();
    if(httpCode > 0) {
       switchstate = 0;
@@ -96,7 +96,7 @@ void loop()
         Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
      }
   http.end();
-  Serial.println("Wachten tot het kunstwerk klaar is");
+  Serial.println("Wachten tot het item klaar is");
     delay(180000);  // wait 3min minutes 
  }
 }
